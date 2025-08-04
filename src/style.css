@@ -1,0 +1,225 @@
+@import url('https://use.typekit.net/kcd1eww.css');
+
+* {
+  font-family: "inter-variable", sans-serif;
+  line-height: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+}
+
+h4, p {
+  margin: 0;
+}
+
+.card {
+  background: #EFEFEF;
+  border: 1px solid #CCCCCC;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 416px;
+  box-sizing: border-box;
+  justify-content: end;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .logo {
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.card-header {
+  align-items: center;
+  height: 12px;
+}
+
+.card .name {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .icon {
+  font-weight: 600;
+  font-size: 14px;
+  color: #999999;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 50px;
+  border: 1px solid #999999;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.tooltip .content {
+  position: absolute;
+  top: -6px;
+  right: 100%;
+  margin-right: 10px;
+  max-width: 160px;
+  width: max-content;
+  white-space: normal;
+  word-wrap: break-word;
+  background-color: #222;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 1000;
+  font-weight: 400;
+}
+
+.tooltip .content::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: -12px;
+  border-width: 6px;
+  border-style: solid;
+  border-color:  transparent transparent transparent #222;
+}
+
+.tooltip:hover .content {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip:hover .icon {
+  color: #389e54;
+  border-color: #389e54;
+  background: #f4f8f6;
+  outline: none;
+  box-shadow: 0 0 0 2px #d9f5e1;
+}
+
+hr {
+  margin: 16px 0;
+  border-top: 1px solid #000;
+}
+
+.rating {
+  width: 160px;
+  height: 64px;
+  border-radius: 64px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.rating .number {
+  width: 64px;
+  height: 64px;
+  border: 1px solid #EFEFEF;
+  border-radius: 64px;
+  font-size: 40px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.rating .text {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  margin: auto;
+  color: #fff;
+
+}
+
+.rating.great {
+  background-color: #0E8A4A;
+}
+
+.rating.good {
+  background-color:deepskyblue;
+}
+
+.rating.normal {
+  background-color:darkkhaki
+}
+
+.rating.bad {
+  background-color:brown;
+}
+
+.info {
+  flex: 1;
+  margin-top: -4px;
+}
+
+.info .title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  margin-bottom: 7px;
+}
+
+.info .count {
+  margin-top: 12px;
+  line-height: 10px;
+}
+.info .date {
+  margin-top: 16px;
+  color: #666666;
+  line-height: 10px;
+}
+
+@media(max-width: 720px) {
+  .card {
+    max-width: 370px;
+  }
+  .info .title {
+    min-width: 162px;
+}
+
+}
+
+
+@media(max-width: 480px) {
+  .mobile-column {
+    flex-direction: column;
+  }
+  .tooltip .content {
+    max-width: 100px;
+  }
+  .card {
+    max-width: 193px;
+  }
+}
